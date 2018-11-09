@@ -1,0 +1,22 @@
+<div id="navbar" [ngClass]="{'active': mainComponent.toggledOn}">
+  <div class="nav-item">
+    <span class="heading">
+      Poetical
+    </span>
+  </div>
+  <div class="nav-item"></div>
+  <div class="nav-item">
+    <div *ngIf="!isLoggedIn()">
+        <ul>
+            <li><a (click)="toggleNavBar()" [routerLink]="['./home']">Home</a></li>
+            <li><a (click)="toggleNavBar()" [routerLink]="['./register']">Register</a></li>
+            <li><a (click)="toggleNavBar()" [routerLink]="['./login']">Login</a></li>
+          </ul>
+    </div>
+  </div>
+</div>
+<div id="fab" (click)="toggleNavBar()" [ngClass]="{'active': mainComponent.toggledOn}">
+  <div id="hamburger-top"></div>
+  <div id="hamburger-middle"></div>
+  <div id="hamburger-bottom"></div>
+</div>

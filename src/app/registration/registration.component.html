@@ -1,14 +1,31 @@
-<div id="card">
-    <h4>Register</h4>
-    <div id="form-group">
-      <form>
-       <input id="username" type="text" placeholder="Enter Username">
-        <br/>
-        <input id="password" type="password" placeholder="Enter Password">
-        <br/>
-        <input id="email" type="password" placeholder="Enter E-Mail">
-        <br/>
-        <button id="register-button">Sign Up</button>
-      </form>
+<div class="grouped">
+    <div class="grouped-item"></div>
+    <div class="grouped-item">
+        <h4>
+            Register
+        </h4>
+        <div class="formgroup">
+            <form [formGroup]="registerGroup">
+                <input type="text" id="user" placeholder="Enter Username" [formControl]="username">
+                <small *ngIf="!username.valid && username.touched" [ngStyle]="{'color': 'red'}">
+                        Not a valid username
+                </small>
+                <input type="password" id="password" placeholder="Enter Password" [formControl]="password">
+                <small *ngIf="!password.valid && password.touched" [ngStyle]="{'color': 'red'}">
+                        Password too short
+                    </small>
+                <input type="email" id="email" placeholder="Enter Email" [formControl]="email">
+                <small *ngIf="!email.valid && email.touched" [ngStyle]="{'color': 'red'}">
+                        Invalid e-mail
+                    </small>
+                <select id="gender" (change)="bindToElement($event)" [(ngModel)]="gender" [ngModelOptions]="{standalone: true}">
+                        <option *ngFor="let i of genders">
+                            {{ i }}
+                        </option>
+                    </select>
+                <button [disabled]="!registerGroup.valid" (click)="register()">Sign Up</button>
+            </form>
+        </div>
     </div>
-  </div>
+    <div class="grouped-item"></div>
+</div>

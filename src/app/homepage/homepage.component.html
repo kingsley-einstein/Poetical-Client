@@ -1,36 +1,11 @@
-<header>
-    <div id="navbar">
-        <div id="navbar-item">
-          <span class="heading">&#80;oetical</span>
-        </div>
-        <div id="navbar-item">
-          <ul>
-            <li><a [routerLink]="['./login']">Login</a></li>
-            <li><a [routerLink]="['./register']">Register</a></li>
-            <li><a [routerLink]="['./resetpass']">Reset Password</a></li>
-          </ul>
-        </div>
-        <div id="navbar-item"></div>
-      </div>
-</header>
-<div id="container">
-  <div id="navbar">
-    <div id="navbar-item"></div>
-    <div id="navbar-item">
-      <router-outlet></router-outlet>
+    <div class="textline">
+        <h4>
+            Welcome to Poetical, the community of intellectuals who are masters in the art of soul upliftment through stanzas.
+        </h4>
+        <h5>
+            Join our community of talented folks and bask in the warmth that comes with each verse in their mind-tingling art.
+        </h5>
+        <a class="button-outline-attention" [routerLink]="['../register']">
+            Get Started
+        </a>
     </div>
-    <div id="navbar-item"></div>
-  </div>
-</div>
-<footer>
-  <div id="navbar">
-    <div id="navbar-item"></div>
-    <div id="navbar-item"></div>
-    <div id="navbar-item">
-      <i class="fab fa-facebook"></i>
-      <i class="fab fa-google-plus"></i>
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-twitter"></i>
-    </div>
-  </div>
-</footer>

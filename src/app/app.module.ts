@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -22,17 +24,15 @@ import { LoginComponent } from './login/login.component';
 import { CreateBlogComponent } from './create-blog/create-blog.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { MainComponent } from './main/main.component';
 
 const routes : Routes = [
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {
     path: 'home', 
     component: HomepageComponent
-  },
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
   },
   {
     path: 'login',
@@ -43,8 +43,26 @@ const routes : Routes = [
     component: RegistrationComponent
   },
   {
-    path: 'resetpass',
+    path: 'reset-password',
     component: ResetPasswordComponent
+  },
+  {
+    path: 'dashboard/:user_id/:user_name',
+    component: DashboardComponent,
+    children: [
+      {
+        path: 'topview',
+        component: ListComponent
+      },
+      {
+        path: 'profile/:user_name',
+        component: ProfileComponent
+      },
+      {
+        path: 'user/:user_id/:user_name',
+        component: UserDetailsViewComponent
+      }
+    ]
   }
 ];
 
@@ -60,13 +78,16 @@ const routes : Routes = [
     ResetPasswordComponent,
     //AdminDashboardComponent,
     //SettingsComponent,
-    //ListComponent,
+    ListComponent,
     //MessageComponent,
     //SendMessageComponent,
     //NewPoemComponent,
     //MessageViewComponent,
     //BuddyViewComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent,
+    HeaderComponent,
+    MainComponent
     //CreateBlogComponent,
     //BlogListComponent,
     //BlogDetailComponent
@@ -74,7 +95,10 @@ const routes : Routes = [
   imports: [
     BrowserModule,
     RouterModule
-    .forRoot(routes)
+    .forRoot(routes),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
