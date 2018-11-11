@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -43,7 +44,7 @@ const routes : Routes = [
     component: RegistrationComponent
   },
   {
-    path: 'reset-password',
+    path: 'resetpassword',
     component: ResetPasswordComponent
   },
   {
@@ -54,14 +55,7 @@ const routes : Routes = [
         path: 'topview',
         component: ListComponent
       },
-      {
-        path: 'profile/:user_name',
-        component: ProfileComponent
-      },
-      {
-        path: 'user/:user_id/:user_name',
-        component: UserDetailsViewComponent
-      }
+      {path: '', redirectTo: 'topview', pathMatch: 'full'}
     ]
   }
 ];
@@ -71,7 +65,7 @@ const routes : Routes = [
     AppComponent,
     //ProfileComponent,
     HomepageComponent,
-    //DashboardComponent,
+    DashboardComponent,
     //PoemDetailsViewComponent,
     //UserDetailsViewComponent,
     RegistrationComponent,
@@ -98,7 +92,8 @@ const routes : Routes = [
     .forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

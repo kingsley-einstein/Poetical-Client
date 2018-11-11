@@ -1,0 +1,311 @@
+@media screen and (min-width: 769px) {
+    .flex-view {
+        display: flex;
+        width: 250%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        padding: 50px;
+        margin: 0;
+        
+    }
+    
+    .flexed-item {
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+        margin-left: 10px;
+    }
+    
+    .card {
+        border-radius: 5px;
+        border: thin solid #dcdcdc;
+        transition: all 1s cubic-bezier(0.25, 0.5, 0.75, 1.0);
+        width: 200px;
+        padding: 0;
+        cursor: pointer;
+    }
+    
+    .card:hover {
+        box-shadow: 4px 2px 2px 0px rgba(0, 0, 0, 0.5);
+    }
+    
+    .image-div {
+        width: 100%;
+        height: 200px;
+        border-top-style: none;
+        border-right-style: none;
+        border-bottom-style: solid;
+        border-left-style: none;
+        border-bottom: thin solid #dcdcdc;
+    }
+    
+    .image-div img {
+        width: inherit;
+        height: inherit;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    
+    .details-container {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    
+    .details-item {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    :host /deep/ .pagination {
+        list-style: none;
+        border-radius: 0.25rem;
+        display: flex;
+        padding-left: 0;
+    }
+
+    :host /deep/ .pagination .page-item .page-link {
+        border-radius: 0 !important;
+    }
+
+    
+
+     :host /deep/ .page-item:first-child .page-link {
+        margin-left: 0;
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+      }
+
+      :host /deep/ .page-link {
+        position: relative;
+        display: block;
+        padding: 0.5rem 0.75rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        color: #007bff;
+        background-color: #fff;
+        border: 1px solid rgba(0, 128, 128, 0.7);
+        outline: none;
+      }
+
+      :host /deep/ .page-link:hover {
+        z-index: 2;
+        color: #0056b3;
+        text-decoration: none;
+        background-color: rgba(0, 0, 200, 0.5);
+      }
+
+      :host /deep/ .page-link:focus {
+        z-index: 2;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      }
+
+      :host /deep/ .page-link:not(:disabled):not(.disabled) {
+        cursor: pointer;
+      }
+
+      :host /deep/ .pagination-sm .page-link {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.5;
+      }
+
+      :host /deep/ .pagination-sm .page-item:first-child .page-link {
+        border-top-left-radius: 0.2rem;
+        border-bottom-left-radius: 0.2rem;
+      }
+
+      :host /deep/ .pagination-sm .page-item:last-child .page-link {
+        border-top-right-radius: 0.2rem;
+        border-bottom-right-radius: 0.2rem;
+      }
+
+      :host /deep/ .page-item.active .page-link {
+        z-index: 1;
+        color: #fff;
+        background-color: rgba(128, 128, 0, 0.8);
+        border-color: #007bff;
+      }
+
+      :host .page-item.disabled .page-link {
+        color: #6c757d;
+        pointer-events: none;
+        cursor: auto;
+        background-color: #fff;
+        border-color: #dee2e6;
+      }
+
+      .centerize {
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+      }
+}
+
+@media screen and (max-width: 768px) {
+    .flex-view {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .flexed-item {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+    }
+    
+    .card {
+        border-radius: 5px;
+        border: thin solid #dcdcdc;
+        transition: all 1s cubic-bezier(0.25, 0.5, 0.75, 1.0);
+        width: 100%;
+        padding: 0;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    
+    .card:hover {
+        box-shadow: 4px 2px 2px 0px rgba(0, 0, 0, 0.5);
+    }
+    
+    .image-div {
+        width: 50%;
+        height: inherit;
+        border-top-style: none;
+        border-right-style: solid;
+        border-bottom-style: none;
+        border-left-style: none;
+        border-right: thin solid #dcdcdc;
+    }
+    
+    .image-div img {
+        width: 100%;
+        height: inherit;
+        border-radius: 50%;
+    }
+    
+    .details-container {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0px 20px 0px 0px;
+        height: 40px;
+    }
+    
+    .details-item {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        height: inherit;
+        padding-left: 0;
+    }
+
+    :host /deep/ .pagination {
+        list-style: none;
+        border-radius: 0.25rem;
+        display: flex;
+        padding-left: 0;
+    }
+
+    :host /deep/ .pagination .page-item .page-link {
+        border-radius: 0 !important;
+    }
+
+    
+
+     :host /deep/ .page-item:first-child .page-link {
+        margin-left: 0;
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+      }
+
+      :host /deep/ .page-link {
+        position: relative;
+        display: block;
+        padding: 0.5rem 0.75rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        color: #007bff;
+        background-color: #fff;
+        border: 1px solid rgba(0, 128, 128, 0.7);
+        outline: none;
+      }
+
+      :host /deep/ .page-link:hover {
+        z-index: 2;
+        color: #0056b3;
+        text-decoration: none;
+        background-color: rgba(0, 0, 200, 0.5);
+      }
+
+      :host /deep/ .page-link:focus {
+        z-index: 2;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      }
+
+      :host /deep/ .page-link:not(:disabled):not(.disabled) {
+        cursor: pointer;
+      }
+
+      :host /deep/ .pagination-sm .page-link {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.5;
+      }
+
+      :host /deep/ .pagination-sm .page-item:first-child .page-link {
+        border-top-left-radius: 0.2rem;
+        border-bottom-left-radius: 0.2rem;
+      }
+
+      :host /deep/ .pagination-sm .page-item:last-child .page-link {
+        border-top-right-radius: 0.2rem;
+        border-bottom-right-radius: 0.2rem;
+      }
+
+      :host /deep/ .page-item.active .page-link {
+        z-index: 2;
+        color: #fff;
+        background-color: rgba(128, 128, 0, 0.8);
+        border-color: #007bff;
+      }
+
+      :host .page-item.disabled .page-link {
+        color: #6c757d;
+        pointer-events: none;
+        cursor: auto;
+        background-color: #fff;
+        border-color: #dee2e6;
+      }
+
+      .centerize {
+        text-align: center;
+    }
+}

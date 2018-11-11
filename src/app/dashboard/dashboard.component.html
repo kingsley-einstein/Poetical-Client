@@ -1,3 +1,19 @@
-<p>
-  dashboard works!
-</p>
+<div class="grouped" [ngClass]="{'accomodate-sidebar': mainComponent.toggledOnSidebar}">
+  <div class="grouped-item">
+      <div id="sidebar-logged-in" [ngClass]="{'active': mainComponent.toggledOnSidebar}">
+        <div *ngIf="_actualData" class="img-div">
+          <img src="data:{{ _actualData.profilePic !== null ? _actualData.profilePic.mimeType : '' }};base64,{{ _actualData.profilePic !== null ? _actualData.profilePic.data : '' }}" style="border: 1px solid #dcdcdc; border-radius: 50%;" alt="No Image"/>
+        </div>
+        <div>
+          <form [formGroup]="uploadGroup">
+            <input type="file" accept="image/*" [formControl]="picture" (change)="bindFiles($event)">
+            <button class="upload" [disabled]="!uploadGroup.valid" (click)="uploadPicture(_userId)">Upload</button>
+          </form>
+        </div>
+      </div>
+  </div>
+  <div class="grouped-item">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="grouped-item"></div>
+</div>

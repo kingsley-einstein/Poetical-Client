@@ -15,10 +15,15 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.mainComponent.toggledOn = false;
+    this.mainComponent.toggledOnSidebar = false;
   }
 
   toggleNavBar() {
     this.mainComponent.toggleNavBar(!this.mainComponent.toggledOn);
+  }
+
+  toggleSideBar() {
+    this.mainComponent.toggleSideBar(!this.mainComponent.toggledOnSidebar);
   }
 
   isLoggedIn() {

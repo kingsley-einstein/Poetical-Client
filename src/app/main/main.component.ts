@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class MainComponent implements OnInit {
 
   toggledOn : boolean;
+  toggledOnSidebar : boolean;
 
   constructor() { }
 
@@ -17,6 +18,10 @@ export class MainComponent implements OnInit {
 
   toggleNavBar(toggledOn : boolean) {
     this.toggledOn = toggledOn;
+  }
+
+  toggleSideBar(toggledOnSidebar : boolean) {
+    this.toggledOnSidebar = toggledOnSidebar;
   }
 
 }

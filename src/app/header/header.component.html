@@ -1,22 +1,31 @@
-<div id="navbar" [ngClass]="{'active': mainComponent.toggledOn}">
-  <div class="nav-item">
-    <span class="heading">
-      Poetical
-    </span>
-  </div>
-  <div class="nav-item"></div>
-  <div class="nav-item">
-    <div *ngIf="!isLoggedIn()">
-        <ul>
+<div *ngIf="!isLoggedIn()">
+    <div id="navbar" [ngClass]="{'active': mainComponent.toggledOn}">
+        <div class="nav-item">
+          <span class="heading">
+            Poetical
+          </span>
+        </div>
+        <div class="nav-item"></div>
+        <div class="nav-item">
+          <ul>
             <li><a (click)="toggleNavBar()" [routerLink]="['./home']">Home</a></li>
             <li><a (click)="toggleNavBar()" [routerLink]="['./register']">Register</a></li>
             <li><a (click)="toggleNavBar()" [routerLink]="['./login']">Login</a></li>
-          </ul>
-    </div>
-  </div>
+           </ul>
+        </div>
+      </div>
 </div>
-<div id="fab" (click)="toggleNavBar()" [ngClass]="{'active': mainComponent.toggledOn}">
-  <div id="hamburger-top"></div>
-  <div id="hamburger-middle"></div>
-  <div id="hamburger-bottom"></div>
+<div *ngIf="!isLoggedIn()">
+    <div id="fab" (click)="toggleNavBar()" [ngClass]="{'active': mainComponent.toggledOn}">
+        <div id="hamburger-top"></div>
+        <div id="hamburger-middle"></div>
+        <div id="hamburger-bottom"></div>
+      </div>
+</div>
+<div *ngIf="isLoggedIn()">
+    <div id="fab-sidebar" (click)="toggleSideBar()" [ngClass]="{'active': mainComponent.toggledOnSidebar}">
+        <div id="hamburger-top-sidebar"></div>
+        <div id="hamburger-middle-sidebar"></div>
+        <div id="hamburger-bottom-sidebar"></div>
+      </div>
 </div>
