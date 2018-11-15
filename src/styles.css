@@ -1,13 +1,12 @@
 @media screen and (min-width: 769px) {
     body {
-        min-height: 100%;
         max-width: 100%;
         font-family: 'PT Sans', sans-serif;
         background-color: rgba(255, 255, 255, 0.5);
         background-attachment: scroll;
         margin: 0;
         padding: 0;
-        box-sizing: content-box;
+        box-sizing: border-box;
     }
 
     a {
@@ -17,7 +16,7 @@
 
     .main {
         margin-bottom: 40px;
-        padding: 50px 15px 40px;
+        padding: 30px 20px 40px;
         box-sizing: border-box;
         }
 
@@ -108,30 +107,36 @@
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        width: 100%;
-        justify-content: justify;
+        width: 80%;
+        justify-content: center;
         align-items: center;
         text-align: center;
         transition: all 500ms cubic-bezier(0.25, 0.5, 0.75, 1.0);
     }
 
     .grouped-item {
-        box-sizing: content-box;
+        box-sizing: border-box;
         align-items: center;
         justify-content: center;
         text-align: center;
-        width: 100%;
+        width: 80%;
     }
 
     .grouped.accomodate-sidebar {
-        margin-left: 250px;
+        margin-left: 200px;
     }
 
     ::-webkit-file-upload-button {
         border: thin solid rgba(0, 128, 128, 1.0);
         border-radius: 5px;
-        color: black;
+        color: #f6f6f6;
         background-color: rgba(0, 200, 200, 1.0);
+        font-family: 'Fira Sans Condensed', 'Times New Roman', sans-serif;
+    }
+
+    h5.head {
+        font-size: 30px;
+        font-family: 'Comic Sans MS', 'Roboto Slab', sans-serif;
     }
 
 }
@@ -262,7 +267,13 @@
     ::-webkit-file-upload-button {
         border: thin solid rgba(0, 128, 128, 1.0);
         border-radius: 5px;
-        color: black;
+        color: #f6f6f6;
         background-color: rgba(0, 200, 200, 1.0);
+        font-family: 'Fira Sans Condensed', 'Times New Roman', sans-serif;
+    }
+
+    h5.head {
+        font-size: 14px;
+        font-family: 'Comic Sans MS', 'Roboto Slab', sans-serif;
     }
 }

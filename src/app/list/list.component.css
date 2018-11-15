@@ -6,8 +6,7 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        text-align: left;
-        padding: 50px;
+        text-align: center;
         margin: 0;
         
     }
@@ -68,6 +67,7 @@
         margin: 0;
     }
 
+    
     :host /deep/ .pagination {
         list-style: none;
         border-radius: 0.25rem;
@@ -139,7 +139,7 @@
         border-color: #007bff;
       }
 
-      :host .page-item.disabled .page-link {
+      :host /deep/ .page-item.disabled .page-link {
         color: #6c757d;
         pointer-events: none;
         cursor: auto;
@@ -147,7 +147,7 @@
         border-color: #dee2e6;
       }
 
-      .centerize {
+    .centerize {
           text-align: center;
           justify-content: center;
           align-items: center;
@@ -297,7 +297,7 @@
         border-color: #007bff;
       }
 
-      :host .page-item.disabled .page-link {
+      :host /deep/ .page-item.disabled .page-link {
         color: #6c757d;
         pointer-events: none;
         cursor: auto;

@@ -11,11 +11,16 @@ export class ListServerConnectionService {
 
     listAllUsers(page: number) {
         return this.connector
-                   .get(`${environment._api}/users/all/${page-1}`)
+                   .get(`${environment._api}/users/all/${page-1}`);
     }
 
+    listAllPoems(page: number) {
+        return this.connector
+                   .get(`${environment._api}/poems/all/${page-1}?access_token=${localStorage.getItem('token')}`);
+    }
+ 
     addUserItemAsFriend(sender: number, recepient: number) {
         return this.connector
-                   .get(`${environment._api}/friends/send?sender_id=${sender}&recepient_id=${recepient}&access_token=${localStorage.getItem('token')}`)
+                   .get(`${environment._api}/friends/send?sender_id=${sender}&recepient_id=${recepient}&access_token=${localStorage.getItem('token')}`);
     }
 }

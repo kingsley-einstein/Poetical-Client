@@ -52,7 +52,9 @@ export class LoginComponent implements OnInit {
   .subscribe((data: any) => {
     console.log(data);
     this.data = data;
-   localStorage.setItem('user', JSON.stringify(data));
+   localStorage.setItem('user_name', data.username);
+   localStorage.setItem('user_id', data.id)
+   localStorage.setItem('user', data);
   },
 (err) => {
   console.log(err);
