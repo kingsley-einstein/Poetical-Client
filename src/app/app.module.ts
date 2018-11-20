@@ -55,6 +55,18 @@ const routes : Routes = [
         path: 'topview',
         component: ListComponent
       },
+      {
+        path: 'profile',
+        component: ProfileComponent
+      },
+      {
+        path: 'messages',
+        component: MessageComponent
+      },
+      {
+        path: 'send_message',
+        component: SendMessageComponent
+      },
       {path: '', redirectTo: 'topview', pathMatch: 'full'}
     ]
   }
@@ -63,7 +75,7 @@ const routes : Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    //ProfileComponent,
+    ProfileComponent,
     HomepageComponent,
     DashboardComponent,
     //PoemDetailsViewComponent,
@@ -73,8 +85,8 @@ const routes : Routes = [
     //AdminDashboardComponent,
     //SettingsComponent,
     ListComponent,
-    //MessageComponent,
-    //SendMessageComponent,
+    MessageComponent,
+    SendMessageComponent,
     //NewPoemComponent,
     //MessageViewComponent,
     //BuddyViewComponent,

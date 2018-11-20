@@ -1,4 +1,10 @@
 @media screen and (min-width: 769px) {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
     #sidebar-logged-in {
         position: fixed;
         padding-bottom: 50px;
@@ -52,9 +58,33 @@
         cursor: default;
     }
 
+    .side-navbar {
+        margin-top: 20px;
+        margin-left: 0px;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .side-navbar li a {
+        color: #f6f6f6;
+        text-decoration: none;
+        padding: 14px 16px 16px;
+        text-align: center;
+        display: block;
+    }
+
+    .side-navbar li a:hover {
+        background-color: rgba(3, 128, 3, 0.8);
+    }
+
 }
 
 @media screen and (max-width: 768px) {
+    ul {
+        list-style-type: none;
+    }
+
     #sidebar-logged-in {
         position: fixed;
         top: -234px;

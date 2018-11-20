@@ -58,6 +58,7 @@ export class LoginComponent implements OnInit {
   },
 (err) => {
   console.log(err);
+  alert(`${err.error}`);
   this.buttonText = 'Login'
 }, 
 () => {

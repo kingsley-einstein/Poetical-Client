@@ -1,73 +1,77 @@
-<h5 class="head">
-  Authors
-</h5>
-<div *ngIf="isUserDataLoaded && _allusersdata.content.length > 0">
-  <div class="flex-view">
-    <div *ngFor="let user of _allusersdata.content" class="flexed-item">
-      <div *ngIf="_mainUserId != user.id" class="card">
-        <div class="details-container">
-          <div class="details-item">
-           <div class="image-div">
-              <img src="data:{{ user.profilePic !== null ? user.profilePic.mimeType : '' }};base64,{{ user.profilePic !== null ? user.profilePic.data : '' }}" alt="No image"/>
-           </div>
-          </div>
-          <div class="details-item">
-            <h5>
-                #{{ user.id }}
-            </h5>
-          </div>
-          <div class="details-item">
-            <h6>{{ user.username }}</h6>
-          </div>
-          <div class="details-item">
-            <i *ngIf="!isAlreadyRequested(user)" class="fas fa-user-plus" (click)="addAsFriend(user.id)"></i>
-            <i class="fas fa-envelope"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="flex-view">
-    <div class="flexed-item"></div>
-    <div class="flexed-item">
-      <ngb-pagination [collectionSize]="_allusersdata.totalElements" [maxSize]="7" [rotate]="true" [boundaryLinks]="true" [directionLinks]="false" [ellipses]="false" [pageSize]="_allusersdata.size" [(page)]="_userspage" (pageChange)="listAllUsers()" size="sm"></ngb-pagination>
-    </div>
-    <div class="flexed-item"></div>
-  </div>
-</div>
-<h5 class="head">
-  Poems
-</h5>
-<div *ngIf="isPoemDataLoaded && _allpoemsdata.content.length > 0">
-  <div class="flex-view">
-    <div *ngFor="let poem of _allpoemsdata.content" class="flexed-item">
-      <div class="card">
-        <div class="details-container">
-          <div class="details-item">
-           <div class="image-div">
-              <img src="assets/thumbnail.jpg" alt="No image"/>
-           </div>
-          </div>
-          <div class="details-item">
-            <h5>
-              #{{ poem.id }}
-            </h5>
-          </div>
-          <div class="details-item">
-            <h5>{{ poem.title }}</h5>
-          </div>
-          <div class="details-item">
-            <h6>{{ poem.author }}</h6>
+<fieldset>
+  <legend class="head">
+    Authors
+  </legend>
+  <div *ngIf="isUserDataLoaded && _allusersdata.content.length > 0">
+    <div class="flex-view">
+      <div *ngFor="let user of _allusersdata.content" class="flexed-item">
+        <div *ngIf="_mainUserId != user.id" class="card">
+          <div class="details-container">
+            <div class="details-item">
+             <div class="image-div">
+                <img src="data:{{ user.profilePic !== null ? user.profilePic.mimeType : '' }};base64,{{ user.profilePic !== null ? user.profilePic.data : '' }}" alt="No image"/>
+             </div>
+            </div>
+            <div class="details-item">
+              <h5>
+                  #{{ user.id }}
+              </h5>
+            </div>
+            <div class="details-item">
+              <h6>{{ user.username }}</h6>
+            </div>
+            <div class="details-item">
+              <i *ngIf="isAlreadyRequested(user) === false || !isFriend(user) === false" class="fas fa-user-plus" (click)="addAsFriend(user.id)"></i>
+              <i class="fas fa-envelope"></i>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="flex-view">
-    <div class="flexed-item"></div>
-    <div class="flexed-item">
-      <ngb-pagination [collectionSize]="_allpoemsdata.totalElements" [maxSize]="7" [rotate]="true" [boundaryLinks]="true" [directionLinks]="false" [ellipses]="false" [pageSize]="_allpoemsdata.size" [(page)]="_poemspage" (pageChange)="listAllPoems()" size="sm"></ngb-pagination>
+    <div class="flex-view">
+      <div class="flexed-item"></div>
+      <div class="flexed-item">
+        <ngb-pagination [collectionSize]="_allusersdata.totalElements" [maxSize]="7" [rotate]="true" [boundaryLinks]="true" [directionLinks]="false" [ellipses]="false" [pageSize]="_allusersdata.size" [(page)]="_userspage" (pageChange)="listAllUsers()" size="sm"></ngb-pagination>
+      </div>
+      <div class="flexed-item"></div>
     </div>
-    <div class="flexed-item"></div>
   </div>
-</div>
+</fieldset>
+<fieldset>
+  <legend class="head">
+    Poems
+  </legend>
+  <div *ngIf="isPoemDataLoaded && _allpoemsdata.content.length > 0">
+    <div class="flex-view">
+      <div *ngFor="let poem of _allpoemsdata.content" class="flexed-item">
+        <div class="card">
+          <div class="details-container">
+            <div class="details-item">
+             <div class="image-div">
+                <img src="assets/thumbnail.jpg" alt="No image"/>
+             </div>
+            </div>
+            <div class="details-item">
+              <h5>
+                #{{ poem.id }}
+              </h5>
+            </div>
+            <div class="details-item">
+              <h5>{{ poem.title }}</h5>
+            </div>
+            <div class="details-item">
+              <h6>{{ poem.author }}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-view">
+      <div class="flexed-item"></div>
+      <div class="flexed-item">
+        <ngb-pagination [collectionSize]="_allpoemsdata.totalElements" [maxSize]="7" [rotate]="true" [boundaryLinks]="true" [directionLinks]="false" [ellipses]="false" [pageSize]="_allpoemsdata.size" [(page)]="_poemspage" (pageChange)="listAllPoems()" size="sm"></ngb-pagination>
+      </div>
+      <div class="flexed-item"></div>
+    </div>
+  </div>
+</fieldset>

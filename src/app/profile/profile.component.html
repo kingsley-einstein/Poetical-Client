@@ -1,3 +1,74 @@
-<p>
-  profile works!
-</p>
+<div *ngIf="_userProfile !== 'undefined'" class="frame">
+  <div class="frame-item">
+      <img src="data:{{ _userProfile.profilePic !== null && _userProfile != 'undefined' ? _userProfile.profilePic.mimeType : '' }};base64,{{ _userProfile.profilePic !== null && _userProfile != 'undefined' ? _userProfile.profilePic.data : '' }}" class="pic"/>
+  </div>
+  <div class="frame-item">
+    <div class="inner-frame">
+      <div class="inner-frame-item">
+        <b style="padding: 20px;">Id: </b> {{ _userProfile.id }}
+      </div>
+      <div class="inner-frame-item">
+        <b style="padding: 20px;">Username: </b> {{ _userProfile.username }}
+      </div>
+      <div class="inner-frame-item">
+        <b style="padding: 20px;">Email: </b> {{ _userProfile.email }}
+      </div>
+      <div class="inner-frame-item">
+        <b style="padding: 20px;">Messages: </b> <span class="item"> {{ _userProfile.unreadMessages }} </span>
+      </div>
+      <div class="inner-frame-item">
+        <b style="padding: 20px;">Requests: </b> <span class="item"> {{ _userProfile.receivedRequestsSize }} </span>
+      </div>
+      <div class="inner-frame-item">
+        <b style="padding: 20px;">Poems: </b> {{ _userProfile.poems.length }}
+      </div>
+      <div class="inner-frame-item">
+        <b style="padding: 20px;">Gender: </b> {{ _userProfile.gender }}
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <fieldset>
+    <legend class="head">
+      My Poems
+    </legend>
+    <div *ngIf="_poemsData && _poemsData.content.length > 0">
+      <div class="flex-view">
+        <div *ngFor="let item of _poemsData.content" class="flexed-item">
+          <div class="card">
+            <div class="details-container">
+              <div class="details-item">
+                <div class="image-div">
+                  <img src="assets/thumbnail.jpg" alt="No Image"/>
+                </div>
+              </div>
+              <div class="details-item">
+                <h5>
+                  # {{ item.id }}
+                </h5>
+              </div>
+              <div class="details-item">
+                <h5>
+                  {{ item.title }}
+                </h5>
+              </div>
+              <div class="details-item">
+                <h5>
+                  {{ item.author }}
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-view">
+      <div class="flexed-item"></div>
+      <div class="flexed-item">
+        <ngb-pagination [collectionSize]="_poemsData.totalElements" [maxSize]="7" [rotate]="true" [boundaryLinks]="true" [directionLinks]="false" [ellipses]="false" [pageSize]="_poemsData.size" [(page)]="_poemsPage"(pageChange)="getAllPoemsByUser()" size="sm"></ngb-pagination>
+      </div>
+      <div class="flexed-item"></div>
+    </div>
+  </fieldset>
+</div>

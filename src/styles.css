@@ -2,7 +2,7 @@
     body {
         max-width: 100%;
         font-family: 'PT Sans', sans-serif;
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: #f6f6f6;
         background-attachment: scroll;
         margin: 0;
         padding: 0;
@@ -134,9 +134,21 @@
         font-family: 'Fira Sans Condensed', 'Times New Roman', sans-serif;
     }
 
-    h5.head {
-        font-size: 30px;
-        font-family: 'Comic Sans MS', 'Roboto Slab', sans-serif;
+    fieldset {
+        border-top: medium solid rgba(0, 200, 200, 1);
+        border-bottom: none;
+        border-right: none;
+        border-left: none;
+        width: inherit;
+        padding: 20px;
+        text-align: center;
+    }
+
+    legend.head {
+        font-size: 20px;
+        font-family: 'Roboto Slab', 'Raleway', sans-serif;
+        text-align: center;
+        padding: 30px;
     }
 
 }
@@ -145,6 +157,7 @@
     body {
         height: 100%;
         font-family: 'PT Sans', sans-serif;
+        background-color: #f6f6f6;
         background-attachment: scroll;
         box-sizing: border-box;
     }
@@ -272,8 +285,20 @@
         font-family: 'Fira Sans Condensed', 'Times New Roman', sans-serif;
     }
 
-    h5.head {
-        font-size: 14px;
-        font-family: 'Comic Sans MS', 'Roboto Slab', sans-serif;
+    fieldset {
+        border-top: medium solid rgba(0, 200, 200, 1);
+        border-bottom: none;
+        border-right: none;
+        border-left: none;
+        width: inherit;
+        padding: 10px;
+        text-align: center;
+    }
+
+    legend.head {
+        font-size: 10px;
+        font-family: 'Roboto Slab', 'Raleway', sans-serif;
+        text-align: center;
+        padding: 20px;
     }
 }

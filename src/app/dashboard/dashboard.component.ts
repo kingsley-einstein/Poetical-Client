@@ -41,6 +41,10 @@ export class DashboardComponent implements OnInit {
   });
   }
 
+  public getActualData() {
+    return this._actualData;
+  }
+
   bindFiles(event: any) {
     this.fileList = event.target.files;
   }

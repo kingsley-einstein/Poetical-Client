@@ -10,6 +10,24 @@
             <button class="upload" [disabled]="!uploadGroup.valid" (click)="uploadPicture(_userId)">Upload</button>
           </form>
         </div>
+        <div>
+          <div class="side-navbar">
+            <ul>
+                <li>
+                    <a [routerLink]="['topview']"><i class="fa fa-home" style="padding-right: 40px;"></i> Home</a>
+                  </li>
+              <li>
+                <a [routerLink]="['profile']"><i class="fa fa-user" style="padding-right: 40px;"></i> My Profile</a>
+              </li>
+              <li>
+                <a [routerLink]="['messages']"><i class="fas fa-envelope" style="padding-right: 40px;"></i> My Messages</a>
+              </li>
+              <li>
+                <a [routerLink]="['send_message']"><i class="fas fa-paper-plane" style="padding-right: 40px;"></i> New Message</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
   </div>
   <div class="grouped-item">
