@@ -29,6 +29,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 
+import { OnlyLoggedUser } from './guards/OnlyLoggedUser';
+
 const routes : Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {
@@ -50,6 +52,7 @@ const routes : Routes = [
   {
     path: 'dashboard/:user_id/:user_name',
     component: DashboardComponent,
+    canActivate: [OnlyLoggedUser],
     children: [
       {
         path: 'topview',
