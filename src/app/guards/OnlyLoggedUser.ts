@@ -1,21 +1,23 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Logout } from '../Logout';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class OnlyLoggedUser implements CanActivate {
 
-    constructor(public router: Router) {}
+    constructor(private router: Router) {}
 
-    canActivate() : boolean{
-        if (localStorage.getItem('user')) {
-            return true;
-        }
-        else {
+    canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) : Observable<boolean> | Promise<boolean> | boolean{
+        if (!localStorage.getItem('user')) {
             
+            alert('You need to login to continue');
+
             Logout.logout(this.router);
 
             return false;
         }
+
+        return true;
     }
 }

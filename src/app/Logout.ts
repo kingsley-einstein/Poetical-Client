@@ -10,6 +10,6 @@ export class Logout {
 
     public static logout(router: Router) {
         localStorage.clear();
-        router.navigate(['home']);
+        router.navigate(['login']);
     }
 }

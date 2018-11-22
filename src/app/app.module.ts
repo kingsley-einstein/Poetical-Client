@@ -30,6 +30,9 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 
 import { OnlyLoggedUser } from './guards/OnlyLoggedUser';
+import { HttpInterceptorGuard } from './guards/HttpInterceptorGuard';
+
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 const routes : Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -110,7 +113,13 @@ const routes : Routes = [
     HttpClientModule,
     NgbPaginationModule
   ],
-  providers: [],
+  providers: [
+    OnlyLoggedUser,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorGuard,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
