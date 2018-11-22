@@ -34,6 +34,7 @@ import { HttpInterceptorGuard } from './guards/HttpInterceptorGuard';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
+
 const routes : Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {
@@ -73,6 +74,10 @@ const routes : Routes = [
         path: 'send_message',
         component: SendMessageComponent
       },
+      {
+        path: 'buddies',
+        component: BuddyViewComponent
+      },
       {path: '', redirectTo: 'topview', pathMatch: 'full'}
     ]
   }
@@ -95,11 +100,11 @@ const routes : Routes = [
     SendMessageComponent,
     //NewPoemComponent,
     //MessageViewComponent,
-    //BuddyViewComponent,
+    BuddyViewComponent,
     LoginComponent,
     FooterComponent,
     HeaderComponent,
-    MainComponent
+    MainComponent,
     //CreateBlogComponent,
     //BlogListComponent,
     //BlogDetailComponent

@@ -73,11 +73,13 @@ export class ListComponent implements OnInit {
   isAlreadyRequested(item) : boolean {
     let isRequested = false;
 
-    for (let i = 0; i < item.receivedRequests.length; i++) {
-      if (item.receivedRequests[i].from === this._mainUserName) {
-        isRequested = true;
-      }
+if (item.receivedRequests.length > 0) {
+  for (let j = 0; j < item.receivedRequests.length; j++) {
+    if (item.receivedRequests[j].from === this._mainUserName) {
+      isRequested = true;
     }
+  }
+}
 
     return isRequested;
   }
@@ -85,9 +87,9 @@ export class ListComponent implements OnInit {
   isFriend(item) : boolean {
     let isFriend = false;
 
-    if (item.friends.length > 0) {
-      for (let i = 0; i < item.friends.length; i++) {
-        if (item.friends[i].username === this._mainUserName) {
+    if (item.users.length > 0) {
+      for (let i = 0; i < item.users.length; i++) {
+        if (item.users[i].username === this._mainUserName) {
           isFriend = true;
         }
       }

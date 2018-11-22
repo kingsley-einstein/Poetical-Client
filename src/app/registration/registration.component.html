@@ -7,15 +7,15 @@
         <div class="formgroup">
             <form [formGroup]="registerGroup">
                 <input type="text" id="user" placeholder="Enter Username" [formControl]="username">
-                <small *ngIf="!username.valid && username.touched" [ngStyle]="{'color': 'red'}">
+                <small [hidden]="username.valid || !username.touched" [ngStyle]="{'color': 'red'}">
                         Not a valid username
                 </small>
                 <input type="password" id="password" placeholder="Enter Password" [formControl]="password">
-                <small *ngIf="!password.valid && password.touched" [ngStyle]="{'color': 'red'}">
+                <small [hidden]="password.valid || !password.touched" [ngStyle]="{'color': 'red'}">
                         Password too short
                 </small>
                 <input type="email" id="email" placeholder="Enter Email" [formControl]="email">
-                <small *ngIf="!email.valid && email.touched" [ngStyle]="{'color': 'red'}">
+                <small [hidden]="email.valid || !email.touched" [ngStyle]="{'color': 'red'}">
                         Invalid e-mail
                     </small>
                 <select id="gender" (change)="bindToElement($event)" [(ngModel)]="gender" [ngModelOptions]="{standalone: true}">

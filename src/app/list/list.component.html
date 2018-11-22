@@ -21,7 +21,7 @@
               <h6>{{ user.username }}</h6>
             </div>
             <div class="details-item">
-              <i *ngIf="isAlreadyRequested(user) === false || !isFriend(user) === false" class="fas fa-user-plus" (click)="addAsFriend(user.id)"></i>
+              <i *ngIf="!isFriend(user) || isAlreadyRequested(user)" class="fas fa-user-plus" (click)="addAsFriend(user.id)"></i>
               <i class="fas fa-envelope"></i>
             </div>
           </div>
@@ -61,6 +61,9 @@
             </div>
             <div class="details-item">
               <h6>{{ poem.author }}</h6>
+            </div>
+            <div class="details-item">
+              <i class="fa fa-like"></i>
             </div>
           </div>
         </div>

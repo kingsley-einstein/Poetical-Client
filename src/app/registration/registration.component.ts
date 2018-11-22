@@ -45,7 +45,7 @@ export class RegistrationComponent implements OnInit {
     console.log(err);
   },
 () => {
-
+  alert('Succesfully registered. Proceed to login');
 })
   }
 

@@ -66,6 +66,8 @@ export class DashboardComponent implements OnInit {
   (err) => {
     console.log(err);
     alert(`${err.status} | ${err.error}`);
+  }, () => {
+    this.getUserDetails();
   })
   }
 

@@ -1,3 +1,14 @@
-<p>
-  buddy-view works!
-</p>
+<table>
+  <tr>
+    <th>From</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let request of _requestsData.content">
+    <td>
+      {{ request.from }}
+    </td>
+    <td>
+      <button class="action" (click)="acceptRequest(request.senderId, request.id)">Accept</button> <button class="action" (click)="rejectRequest(request.id)">Reject</button>
+    </td>
+  </tr>
+</table>
