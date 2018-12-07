@@ -54,7 +54,8 @@ export class LoginComponent implements OnInit {
     this.data = data;
    localStorage.setItem('user_name', data.username);
    localStorage.setItem('user_id', data.id)
-   localStorage.setItem('user', data);
+   localStorage.setItem('user', JSON.stringify(data));
+   //localStorage.setItem('userFriends', JSON.stringify(data.users))
   },
 (err) => {
   console.log(err);

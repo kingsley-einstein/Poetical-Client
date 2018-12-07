@@ -98,4 +98,8 @@ if (item.receivedRequests.length > 0) {
     return isFriend;
   }
 
+  isNotFriend(item) : boolean {
+    return !localStorage.getItem('userFriends').includes(item.username);
+  }
+
 }

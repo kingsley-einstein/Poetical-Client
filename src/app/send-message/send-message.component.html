@@ -1,3 +1,7 @@
-<p>
-  send-message works!
-</p>
+<div class="formgroup">
+  <form [formGroup]="msgGroup">
+    <input type="text" placeholder="Enter Username" [formControl]="username">
+    <textarea placeholder="Enter Text" [formControl]="text"></textarea>
+    <button [disabled]="!msgGroup.valid" (click)="sendMessage()">Send</button>
+  </form>
+</div>

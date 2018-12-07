@@ -35,6 +35,10 @@ export class DashboardComponent implements OnInit {
     .getUserDetails(this._userId)
     .subscribe((data : any) => {
       this._actualData = data;
+      //localStorage.setItem('userFriends', JSON.stringify(data.users));
+      localStorage.setItem('user', JSON.stringify(data));
+      localStorage.setItem('user_id', data.id);
+      localStorage.setItem('user_name', data.username);
     },
   (err) => {
     console.log(err);

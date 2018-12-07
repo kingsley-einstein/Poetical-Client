@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { MessageConnectionService } from './message-connection.service';
 
 @Component({
   selector: 'app-message',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageComponent implements OnInit {
 
-  constructor() { }
+  page : number = 1;
+  userId : any;
+  data : any;
+
+  constructor(private route: ActivatedRoute, private connector: MessageConnectionService) { 
+    this.route.parent.params.subscribe(params => this.userId = params.user_id);
+    
+  }
 
   ngOnInit() {
+    this.getReceivedMessages();
+  }
+
+  getReceivedMessages() {
+    this
+    .connector
+    .getReceivedMessages(this.userId, (this.page - 1))
+    .subscribe((value : any) => {
+      console.log(value);
+      this.data = value;
+    }, (err) => {
+      console.log(err);
+    }, () => {
+      console.log('Completed');
+    });
   }
 
 }
