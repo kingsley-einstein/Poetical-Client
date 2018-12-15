@@ -1,3 +1,19 @@
-<p>
-  message-view works!
-</p>
+<div *ngFor="let i of data.content">
+  <div [ngClass]="{'message-right': i.author !== userName, 'message-left': i.author === userName}">
+    <div>
+      <h4>
+        {{ i.author }}
+      </h4>
+    </div>
+    <div>
+      {{ i.text }}
+    </div>
+  </div>
+</div>
+
+<div class="formgroup">
+  <form>
+    <input type="text" [(ngModel)]="txtModel" name="txtModel" placeholder="Enter Text">
+    <button [disabled]="txtModel.trim().length <= 0" (click)="sendMessage()">Send</button>
+  </form>
+</div>

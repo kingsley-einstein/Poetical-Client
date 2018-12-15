@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MessageConnectionService } from './message-connection.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class MessageComponent implements OnInit {
   userId : any;
   data : any;
 
-  constructor(private route: ActivatedRoute, private connector: MessageConnectionService) { 
+  constructor(private route: ActivatedRoute, private connector: MessageConnectionService, private router: Router) { 
     this.route.parent.params.subscribe(params => this.userId = params.user_id);
     
   }

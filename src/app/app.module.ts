@@ -75,6 +75,10 @@ const routes : Routes = [
         component: SendMessageComponent
       },
       {
+        path: 'messageview/:id',
+        component: MessageViewComponent
+      },
+      {
         path: 'buddies',
         component: BuddyViewComponent
       },
@@ -99,7 +103,7 @@ const routes : Routes = [
     MessageComponent,
     SendMessageComponent,
     //NewPoemComponent,
-    //MessageViewComponent,
+    MessageViewComponent,
     BuddyViewComponent,
     LoginComponent,
     FooterComponent,

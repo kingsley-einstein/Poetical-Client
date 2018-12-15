@@ -1,31 +1,104 @@
 @media screen and (min-width: 768px) {
+    .flow {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100vw;
+        height: 84vh;
+    }
+
+    .imgflow {
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100vw;
+        height: 42vh;
+        text-align: center;
+        font-family: 'Lora', sans-serif;
+    }
+
+    .imgflow > div {
+        margin-top: 70px;
+        width: 100%;
+    }
+
+    .imgflow img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .textline {
+        background: rgba(0, 0, 0, 0.8) url('/assets/bg.jpg') no-repeat;
+        background-size: cover;
+        color: white;
+        margin: 0;
+        height: 42vh;
+        font-size: 25px;
+        font-family: 'PT Sans';
+        text-align: center;
+    }
+
     a.button-outline-attention {
-        color: rgba(0, 0, 0, 0.5);
+        color: rgba(200, 200, 200, 1);
         text-decoration: none;
         border: medium solid rgba(0, 128, 128, 0.5);
-        border-radius: 5px;
         padding: 12px 14px;
         font-size: 20px;
         background-color: transparent;
-        transition: background 1s cubic-bezier(0.25, 0.5, 0.75, 1.0);
+        transition: all 1s cubic-bezier(0.25, 0.5, 0.75, 1.0);
     }
+
     a:hover.button-outline-attention {
         background-color: rgba(0, 200, 128, 0.7);
     }
 }
 
 @media screen and (max-width: 767px) {
+    .flow {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .imgflow {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100vw;
+        height: 50vh;
+        text-align: center;
+        font-family: 'Lora', sans-serif;
+    }
+
+    .imgflow > div {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .imgflow img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .textline {
+        background: rgba(0, 0, 0, 0.8) url('/assets/bg.jpg') no-repeat;
+        background-size: cover;
+        color: white;
+        margin: 0;
+        height: 50vh;
+        font-size: 13px;
+        font-family: 'PT Sans';
+        text-align: center;
+    }
+
     a.button-outline-attention {
-        color: rgba(0, 0, 0, 0.5);
+        color: rgba(200, 200, 200, 1);
         text-decoration: none;
         border: medium solid rgba(0, 128, 128, 0.5);
-        border-radius: 5px;
         padding: 5px 7px;
         font-size: 15px;
         text-align: center;
         display: block;
         background-color: transparent;
-        transition: background 1s cubic-bezier(0.25, 0.5, 0.75, 1.0);
+        transition: all 1s cubic-bezier(0.25, 0.5, 0.75, 1.0);
     }
 
     a:hover.button-outline-attention {

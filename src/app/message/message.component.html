@@ -9,7 +9,7 @@
     <td>{{ i.id }}</td>
     <td>{{ i.author }}</td>
     <td>{{ i.isRead }}</td>
-    <td><button class="action">Open</button><button class="action">Delete</button></td>
+    <td><a class="action" [routerLink]="['../messageview', i.id]">Open</a><button class="action">Delete</button></td>
   </tr>
 </table>
 <ngb-pagination [collectionSize]="data.totalElements" [pageSize]="data.size" [(page)]="page" (pageChange)="getReceivedMessages()" [maxSize]="7" [rotate]="true" [ellipses]="false" [boundaryLinks]="true" [directionLinks]="false" size="sm"></ngb-pagination>

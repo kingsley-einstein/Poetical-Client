@@ -1,0 +1,28 @@
+.message-left {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: rgba(200, 100, 80, 1);
+    float: left;
+    border-radius: 50px;
+    padding: 2px;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.message-right {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: rgba(200, 0, 200, 1);
+    float: right;
+    border-radius: 50px;
+    padding: 2px;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.message-left, .message-right > div {
+    margin: 10px;
+    padding: 10px;
+}
