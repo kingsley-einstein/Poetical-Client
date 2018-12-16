@@ -2,22 +2,22 @@
     ul {
         list-style-type: none;
         margin: 0;
-        padding: 0;
+        padding: 10px;
     }
 
     #sidebar-logged-in {
         position: fixed;
-        padding-bottom: 50px;
-        padding-top: 50px;
-        margin-bottom: 15px;
-        height: 100%;
-        top: 0;
-        bottom: 50px;
-        left: -234px;
+        height: 50%;
+        margin-left: -234px;
         opacity: 0;
         width: 240px;
-        background-color: rgba(0, 0, 0, 1.0);
-        transition: left 500ms cubic-bezier(0.25, 0.5, 0.75, 1.0);
+        background-color: transparent;
+        background-attachment: fixed;
+        transition: all 500ms cubic-bezier(0.25, 0.5, 0.75, 1.0);
+    }
+
+    #sidebar-logged-in i {
+        font-size: 30px;
     }
 
     #sidebar-logged-in .img-div img {
@@ -25,11 +25,12 @@
         height: 100px;
         transition: transform 500ms cubic-bezier(0.25, 0.5, 0.75, 1.0);
         cursor: pointer;
+        margin-top: 20px;
     }
 
     #sidebar-logged-in.active {
         opacity: 1;
-        left: -1px;
+        margin-left: 14px;
     }
 
     #sidebar-logged-in input {
@@ -66,15 +67,23 @@
         width: 100%;
     }
 
-    .side-navbar li a {
-        color: #f6f6f6;
-        text-decoration: none;
-        padding: 14px 16px 16px;
+    .side-navbar li {
+        margin-bottom: 20px;
+        border: 1px solid #dcdcdc;
+        border-radius: 100%;
+        width: 50px;
         text-align: center;
-        display: block;
+        padding: 10px;
     }
 
-    .side-navbar li a:hover {
+    .side-navbar li a {
+        color: #000000;
+        text-decoration: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    .side-navbar li:hover {
         background-color: rgba(3, 128, 3, 0.8);
     }
 

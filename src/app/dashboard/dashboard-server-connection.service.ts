@@ -13,9 +13,4 @@ export class DashboardServerConnectionService {
     return this.connector
                .get(`${environment._api}/users/${id}?access_token=${localStorage.getItem('token')}`);
   }
-
-  uploadPicture(id: number, form: FormData) {
-    return this.connector
-               .post(`${environment._api}/pictures/new_picture?user_id=${id}&access_token=${localStorage.getItem('token')}`, form, {responseType: 'text'});
-  }
 }

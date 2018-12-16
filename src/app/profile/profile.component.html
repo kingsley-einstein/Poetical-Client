@@ -6,7 +6,7 @@
           <i class="fa fa-user"></i> <b>Username:</b> {{ _userProfile.username }}
         </div>
         <div class="details-item">
-          <i class="fa fa-mars"></i> <b>Gender:</b> {{ _userProfile.gender }}
+          <i class="fa fa-venus-mars"></i> <b>Gender:</b> {{ _userProfile.gender }}
         </div>
         <div class="details-item">
           <i class="fa fa-envelope"></i> <b>Messages:</b> <span class="item">{{ _userProfile.unreadMessages }}</span>
@@ -15,6 +15,14 @@
           <i class="fa fa-copy"></i> <b>Poems:</b> <span class="item">{{ _userProfile.poems.length }}</span>
         </div>
       </div>
+  </div>
+  <div [ngStyle]="{'margin-top': '10px'}">
+    <div class="uploadgroup">
+      <form [formGroup]="uploadGroup">
+        <input type="file" (change)="bindFiles($event)" [formControl]="uploadControl">
+        <button (click)="uploadPicture()" [disabled]="!uploadGroup.valid">Upload</button>
+      </form>
+    </div>
   </div>
 </div>
 <div>

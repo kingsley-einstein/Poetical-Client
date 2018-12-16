@@ -2,35 +2,32 @@
   <div class="grouped-item">
       <div id="sidebar-logged-in" [ngClass]="{'active': mainComponent.toggledOnSidebar}">
         <div *ngIf="_actualData" class="img-div">
-          <img src="data:{{ _actualData.profilePic !== null ? _actualData.profilePic.mimeType : '' }};base64,{{ _actualData.profilePic !== null ? _actualData.profilePic.data : '' }}" style="border: 1px solid #dcdcdc; border-radius: 50%;" alt="No Image"/>
-        </div>
-        <div>
-          <form [formGroup]="uploadGroup">
-            <input type="file" accept="image/*" [formControl]="picture" (change)="bindFiles($event)">
-            <button class="upload" [disabled]="!uploadGroup.valid" (click)="uploadPicture(_userId)">Upload</button>
-          </form>
+          <img src="data:{{ _actualData.profilePic !== null ? _actualData.profilePic.mimeType : '' }};base64,{{ _actualData.profilePic !== null ? _actualData.profilePic.data : '' }}" style="border: medium solid #dcdcdc; border-radius: 50%;" alt="No Image"/>
         </div>
         <div>
           <div class="side-navbar">
             <ul>
                 <li>
-                    <a [routerLink]="['topview']"><i class="fa fa-home pad"></i> Home</a>
+                    <a [routerLink]="['topview']"><i class="fa fa-home pad"></i></a>
                   </li>
               <li>
-                <a [routerLink]="['profile']"><i class="fa fa-user pad"></i> My Profile</a>
+                <a [routerLink]="['profile']"><i class="fa fa-user pad"></i></a>
               </li>
               <li>
-                <a [routerLink]="['messages']"><i class="fas fa-envelope pad"></i> My Messages</a>
+                <a [routerLink]="['messages']"><i class="fa fa-envelope pad"></i></a>
               </li>
               <li>
-                <a [routerLink]="['send_message']"><i class="fas fa-paper-plane pad"></i> New Message</a>
+                <a [routerLink]="['send_message']"><i class="fa fa-paper-plane pad"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-copy pad"></i></a>
               </li>
             </ul>
           </div>
         </div>
       </div>
   </div>
-  <div class="grouped-item">
+  <div class="grouped-item marginalize">
     <router-outlet></router-outlet>
   </div>
   <div class="grouped-item"></div>
