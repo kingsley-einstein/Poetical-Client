@@ -40,7 +40,8 @@
     a.button-outline-attention {
         color: rgba(200, 200, 200, 1);
         text-decoration: none;
-        border: medium solid rgba(0, 128, 128, 0.5);
+        border: medium solid rgba(0, 128, 128, 1);
+        border-radius: 5px;
         padding: 12px 14px;
         font-size: 20px;
         background-color: transparent;
@@ -95,7 +96,8 @@
     a.button-outline-attention {
         color: rgba(200, 200, 200, 1);
         text-decoration: none;
-        border: medium solid rgba(0, 128, 128, 0.5);
+        border: medium solid rgba(0, 128, 128, 1);
+        border-radius: 5px;
         padding: 5px 7px;
         font-size: 15px;
         text-align: center;

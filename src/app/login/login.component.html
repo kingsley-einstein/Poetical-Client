@@ -6,8 +6,12 @@
         </h4>
         <div class="formgroup">
             <form [formGroup]="loginGroup">
-                <input type="text" id="user" placeholder="Enter Username" [formControl]="username">
-                <input type="password" id="password" placeholder="Enter Password" [formControl]="password">
+                <div [ngStyle]="{'margin-bottom': '10px'}">
+                    <input type="text" id="user" placeholder="Enter Username" [formControl]="username">
+                </div>
+                <div [ngStyle]="{'margin-bottom': '10px'}">
+                    <input type="password" id="password" placeholder="Enter Password" [formControl]="password">
+                </div>
                 <button [disabled]="!loginGroup.valid" (click)="login()">{{ buttonText }}</button>
             </form>
             <div class="bottom-line">

@@ -1,3 +1,17 @@
-<p>
-  new-poem works!
-</p>
+<div class="formgroup">
+  <form [formGroup]="poemGroup">
+    <div [ngStyle]="{'margin-bottom': '10px'}">
+      <input type="text" placeholder="Enter Poem Title" [formControl]="poemTitle">
+      <small [ngStyle]="{'color': 'red'}" [hidden]="!poemTitle.touched || poemTitle.valid">
+       {{ poemTitle.value.length < 5 && !(poemTitle.value.length > 80) ? errors[0] : errors[1] }}
+      </small>
+    </div>
+    <div [ngStyle]="{'margin-bottom': '10px'}">
+      <textarea placeholder="Enter Poem Content" [formControl]="poemContent"></textarea>
+      <small [ngStyle]="{'color': 'red'}" [hidden]="!poemContent.touched || poemContent.valid">
+        {{ poemContent.value.length < 80 && !(poemContent.value.length > 6000) ? errors[2] : errors[3] }}
+      </small>
+    </div>
+    <button [disabled]="!poemGroup.valid" (click)="createPoem()">Create</button>
+  </form>
+</div>

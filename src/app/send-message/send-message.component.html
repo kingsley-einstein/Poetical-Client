@@ -1,7 +1,11 @@
 <div class="formgroup">
   <form [formGroup]="msgGroup">
-    <input type="text" placeholder="Enter Username" [formControl]="username">
-    <textarea placeholder="Enter Text" [formControl]="text"></textarea>
+    <div [ngStyle]="{'margin-bottom': '10px'}">
+      <input type="text" placeholder="Enter Username" [formControl]="username">
+    </div>
+    <div [ngStyle]="{'margin-bottom': '10px'}">
+      <textarea placeholder="Enter Text" [formControl]="text"></textarea>
+    </div>
     <button [disabled]="!msgGroup.valid" (click)="sendMessage()">Send</button>
   </form>
 </div>

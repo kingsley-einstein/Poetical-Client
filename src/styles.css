@@ -62,12 +62,11 @@ a {
     }
 
     .formgroup input, select {
-        margin-bottom: 20px;
         padding: 14px;
         width: 100%;
         box-sizing: border-box;
         outline: none;
-        border: medium solid rgba(80, 200, 200, 1);
+        border: medium solid rgba(0, 0, 0, 1);
         border-radius: 5px;
         transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
@@ -75,11 +74,10 @@ a {
     .formgroup textarea {
         width: 100%;
         height: 200px;
-        margin-bottom: 20px;
         padding: 30px;
         box-sizing: border-box;
         outline: none;
-        border: medium solid rgba(80, 200, 200, 1);
+        border: medium solid rgba(0, 0, 0, 1);
         border-radius: 5px;
         transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
@@ -96,6 +94,7 @@ a {
         font-family: 'Roboto Slab', sans-serif;
         cursor: pointer;
         transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        outline: none;
     }
 
     .formgroup button:hover {
@@ -112,7 +111,7 @@ a {
         width: 100%;
         box-sizing: border-box;
         outline: none;
-        border: medium solid rgba(80, 200, 200, 1);
+        border: medium solid rgba(0, 0, 0, 1);
         border-radius: 5px;
         transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
@@ -125,6 +124,7 @@ a {
         font-family: 'Roboto Slab', sans-serif;
         cursor: pointer;
         transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        outline: none;
     }
 
     .uploadgroup button:hover {
@@ -142,7 +142,7 @@ a {
         display: flex;
         height: 120vh;
         width: 100vw;
-        flex-flow: column wrap;
+        flex-flow: column nowrap;
         padding: 0;
         background-attachment: fixed;
     }
@@ -176,12 +176,11 @@ a {
     }
 
     .formgroup input, select {
-        margin-bottom: 20px;
         padding: 14px;
         width: 100%;
         box-sizing: border-box;
         outline: none;
-        border: medium solid rgba(80, 200, 200, 1);
+        border: medium solid rgba(0, 0, 0, 1);
         border-radius: 5px;
         transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
@@ -189,11 +188,10 @@ a {
     .formgroup textarea {
         width: 100%;
         height: 200px;
-        margin-bottom: 20px;
         padding: 30px;
         box-sizing: border-box;
         outline: none;
-        border: medium solid rgba(80, 200, 200, 1);
+        border: medium solid rgba(0, 0, 0, 1);
         border-radius: 5px;
         transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
@@ -210,9 +208,40 @@ a {
         font-family: 'Roboto Slab', sans-serif;
         cursor: pointer;
         transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        outline: none;
     }
 
     .formgroup button:hover {
+        background-color: rgba(100, 200, 200, 0.8);
+    }
+
+    .uploadgroup {
+        width: 100%;
+    }
+
+    .uploadgroup input[type="file"] {
+        margin-bottom: 20px;
+        padding: 14px;
+        width: 100%;
+        box-sizing: border-box;
+        outline: none;
+        border: medium solid rgba(0, 0, 0, 1);
+        border-radius: 5px;
+        transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .uploadgroup button {
+        border: 1px solid orange;
+        width: 100%;
+        background: transparent;
+        padding: 14px;
+        font-family: 'Roboto Slab', sans-serif;
+        cursor: pointer;
+        transition: all 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        outline: none;
+    }
+
+    .uploadgroup button:hover {
         background-color: rgba(100, 200, 200, 0.8);
     }
 }

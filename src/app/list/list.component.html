@@ -31,39 +31,45 @@
       <div class="flexed-item"></div>
     </div>
   </div>
-  <div *ngIf="isPoemDataLoaded && _allpoemsdata.content.length > 0">
-    <div class="flex-view">
-      <div *ngFor="let poem of _allpoemsdata.content" class="flexed-item">
-        <div class="card">
-          <div class="details-container">
-            <div class="details-item">
-             <div class="image-div">
-                <img src="assets/thumbnail.jpg" alt="No image"/>
-             </div>
-            </div>
-            <div class="details-item">
-              <h5>
-                #{{ poem.id }}
-              </h5>
-            </div>
-            <div class="details-item">
-              <h5>{{ poem.title }}</h5>
-            </div>
-            <div class="details-item">
-              <h6>{{ poem.author }}</h6>
-            </div>
-            <div class="details-item">
-              <i class="fa fa-like"></i>
+  <div [ngStyle]="{'margin-top': '30px'}">
+      <div *ngIf="isPoemDataLoaded && _allpoemsdata.content.length > 0">
+          <div class="flex-view">
+            <div *ngFor="let poem of _allpoemsdata.content" class="flexed-item">
+              <div class="card">
+                <div class="details-container">
+                  <div class="details-item">
+                   <div class="image-div">
+                      <img src="assets/thumbnail.jpg" alt="No image"/>
+                   </div>
+                  </div>
+                  <div class="details-item">
+                    <h5>
+                      #{{ poem.id }}
+                    </h5>
+                  </div>
+                  <div class="details-item">
+                    <h5>
+                      {{ poem.title }}
+                    </h5>
+                  </div>
+                  <div class="details-item">
+                    <h5>
+                      {{ poem.author }}
+                    </h5>
+                  </div>
+                  <div class="details-item">
+                    <i class="fa fa-thumbs-up"></i>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+          <div class="flex-view">
+            <div class="flexed-item"></div>
+            <div class="flexed-item">
+              <ngb-pagination [collectionSize]="_allpoemsdata.totalElements" [maxSize]="7" [rotate]="true" [boundaryLinks]="true" [directionLinks]="false" [ellipses]="false" [pageSize]="_allpoemsdata.size" [(page)]="_poemspage" (pageChange)="listAllPoems()" size="sm"></ngb-pagination>
+            </div>
+            <div class="flexed-item"></div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="flex-view">
-      <div class="flexed-item"></div>
-      <div class="flexed-item">
-        <ngb-pagination [collectionSize]="_allpoemsdata.totalElements" [maxSize]="7" [rotate]="true" [boundaryLinks]="true" [directionLinks]="false" [ellipses]="false" [pageSize]="_allpoemsdata.size" [(page)]="_poemspage" (pageChange)="listAllPoems()" size="sm"></ngb-pagination>
-      </div>
-      <div class="flexed-item"></div>
-    </div>
   </div>

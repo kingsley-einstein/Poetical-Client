@@ -6,23 +6,31 @@
         </h4>
         <div class="formgroup">
             <form [formGroup]="registerGroup">
-                <input type="text" id="user" placeholder="Enter Username" [formControl]="username">
-                <small [hidden]="username.valid || !username.touched" [ngStyle]="{'color': 'red'}">
+                <div [ngStyle]="{'margin-bottom': '10px'}">
+                    <input type="text" id="user" placeholder="Enter Username" [formControl]="username">
+                    <p [hidden]="username.valid || !username.touched" [ngStyle]="{'color': 'red', 'font-size': '13px'}">
                         Not a valid username
-                </small>
-                <input type="password" id="password" placeholder="Enter Password" [formControl]="password">
-                <small [hidden]="password.valid || !password.touched" [ngStyle]="{'color': 'red'}">
+                    </p>
+                </div>
+                <div [ngStyle]="{'margin-bottom': '10px'}">
+                    <input type="password" id="password" placeholder="Enter Password" [formControl]="password">
+                    <p [hidden]="password.valid || !password.touched" [ngStyle]="{'color': 'red', 'font-size': '13px'}">
                         Password too short
-                </small>
-                <input type="email" id="email" placeholder="Enter Email" [formControl]="email">
-                <small [hidden]="email.valid || !email.touched" [ngStyle]="{'color': 'red'}">
+                    </p>
+                </div>
+                <div [ngStyle]="{'margin-bottom': '10px'}">
+                     <input type="email" id="email" placeholder="Enter Email" [formControl]="email">
+                     <p [hidden]="email.valid || !email.touched" [ngStyle]="{'color': 'red', 'font-size': '13px'}">
                         Invalid e-mail
-                    </small>
-                <select id="gender" (change)="bindToElement($event)" [(ngModel)]="gender" [ngModelOptions]="{standalone: true}">
+                     </p>
+                </div>
+                <div [ngStyle]="{'margin-bottom': '10px'}">
+                    <select id="gender" (change)="bindToElement($event)" [(ngModel)]="gender" [ngModelOptions]="{standalone: true}">
                         <option *ngFor="let i of genders">
                             {{ i }}
                         </option>
                     </select>
+                </div>
                 <button [disabled]="!registerGroup.valid" (click)="register()">Sign Up</button>
             </form>
         </div>

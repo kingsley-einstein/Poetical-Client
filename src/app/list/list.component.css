@@ -191,31 +191,29 @@
     }
     
     .image-div {
-        width: 50%;
-        height: inherit;
+        width: 100%;
+        height: 200px;
         border-top-style: none;
-        border-right-style: solid;
-        border-bottom-style: none;
+        border-right-style: none;
+        border-bottom-style: solid;
         border-left-style: none;
-        border-right: thin solid #dcdcdc;
+        border-bottom: thin solid #dcdcdc;
     }
     
     .image-div img {
         width: 100%;
         height: inherit;
-        border-radius: 50%;
     }
     
     .details-container {
         display: flex;
         width: 100%;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: nowrap;
         justify-content: center;
         align-items: center;
         text-align: center;
         padding: 0px 20px 0px 0px;
-        height: 40px;
     }
     
     .details-item {

@@ -82,6 +82,10 @@ const routes : Routes = [
         path: 'buddies',
         component: BuddyViewComponent
       },
+      {
+        path: 'new_poem',
+        component: NewPoemComponent
+      },
       {path: '', redirectTo: 'topview', pathMatch: 'full'}
     ]
   }
@@ -102,7 +106,7 @@ const routes : Routes = [
     ListComponent,
     MessageComponent,
     SendMessageComponent,
-    //NewPoemComponent,
+    NewPoemComponent,
     MessageViewComponent,
     BuddyViewComponent,
     LoginComponent,
