@@ -75,6 +75,10 @@ const routes : Routes = [
         component: SendMessageComponent
       },
       {
+        path: 'send_message/:name',
+        component: SendMessageComponent 
+      },
+      {
         path: 'messageview/:id',
         component: MessageViewComponent
       },
@@ -85,6 +89,14 @@ const routes : Routes = [
       {
         path: 'new_poem',
         component: NewPoemComponent
+      },
+      {
+        path: 'profile_view/:name/:id',
+        component: UserDetailsViewComponent
+      },
+      {
+        path: 'poem/:id',
+        component: PoemDetailsViewComponent
       },
       {path: '', redirectTo: 'topview', pathMatch: 'full'}
     ]
@@ -97,8 +109,8 @@ const routes : Routes = [
     ProfileComponent,
     HomepageComponent,
     DashboardComponent,
-    //PoemDetailsViewComponent,
-    //UserDetailsViewComponent,
+    PoemDetailsViewComponent,
+    UserDetailsViewComponent,
     RegistrationComponent,
     ResetPasswordComponent,
     //AdminDashboardComponent,

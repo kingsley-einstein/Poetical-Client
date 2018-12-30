@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
 () => {
 
   this.buttonText = 'Login Successful';
-  this.router.navigate(['dashboard', this.data.id, this.data.username])
+  this.router.navigate(['dashboard', this.data.id, this.data.username]);
 
 })
 })

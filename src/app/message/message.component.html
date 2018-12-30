@@ -1,15 +1,43 @@
-<table>
-  <tr>
-    <th>Id</th>
-    <th>From</th>
-    <th>Read</th>
-    <th>Actions</th>
-  </tr>
-  <tr *ngFor="let i of data.content">
-    <td>{{ i.id }}</td>
-    <td>{{ i.author }}</td>
-    <td>{{ i.isRead }}</td>
-    <td><a class="action" [routerLink]="['../messageview', i.id]">Open</a><button class="action">Delete</button></td>
-  </tr>
-</table>
+<h6>Received Messages:</h6>
+<div [ngClass]="{'messages': true}">
+  <ul>
+    <li *ngFor="let i of data.content" [ngClass]="{'message-list-item': true}">
+      <a [routerLink]="['../messageview', i.id]" [ngStyle]="{'color': 'black'}">
+        <i class="fa fa-mail-reply"></i>
+      </a>
+      <i class="fa fa-trash" (click)="deleteMessages(i.id)" [ngStyle]="{'margin-left': '8px'}"></i>
+      <h5>
+        #{{ i.id }}
+      </h5>
+      <small>
+        {{ i.author }}
+      </small>
+      <small [ngStyle]="{'margin-left': '8px'}">
+        {{ i.isRead ? 'Read' : 'Unread'}}
+      </small>
+    </li>
+  </ul>
+</div>
 <ngb-pagination [collectionSize]="data.totalElements" [pageSize]="data.size" [(page)]="page" (pageChange)="getReceivedMessages()" [maxSize]="7" [rotate]="true" [ellipses]="false" [boundaryLinks]="true" [directionLinks]="false" size="sm"></ngb-pagination>
+
+<h6>Sent Messages:</h6>
+<div [ngClass]="{'messages': true}">
+  <ul>
+    <li *ngFor="let i of data2.content" [ngClass]="{'message-list-item': true}">
+      <a [routerLink]="['../messageview', i.id]" [ngStyle]="{'color': 'black'}">
+        <i class="fa fa-envelope"></i>
+      </a>
+      <i class="fa fa-trash" (click)="deleteMessages(i.id)" [ngStyle]="{'margin-left': '8px'}"></i>
+      <h5>
+        #{{ i.id }}
+      </h5>
+      <small>
+        {{ i.recepient }}
+      </small>
+      <small [ngStyle]="{'margin-left': '8px'}">
+        {{ i.isRead ? 'Read' : 'Unread'}}
+      </small>
+    </li>
+  </ul>
+</div>
+<ngb-pagination [collectionSize]="data2.totalElements" [pageSize]="data2.size" [(page)]="page2" (pageChange)="getSentMessages()" [maxSize]="7" [rotate]="true" [ellipses]="false" [boundaryLinks]="true" [directionLinks]="false" size="sm"></ngb-pagination>

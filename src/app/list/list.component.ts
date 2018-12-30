@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ListServerConnectionService } from './list-server-connection.service';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 
@@ -13,7 +13,7 @@ export class ListComponent implements OnInit {
   _userspage : number = 1; _allusersdata : any; isUserDataLoaded : boolean; _mainUserId : number; _mainUserName : string;
   _poemspage : number = 1; _allpoemsdata : any; isPoemDataLoaded : boolean; 
 
-  constructor(private connector: ListServerConnectionService, private route: ActivatedRoute, public dashboard: DashboardComponent) {
+  constructor(private connector: ListServerConnectionService, private route: ActivatedRoute, public dashboard: DashboardComponent, private router: Router) {
     console.log('Initialised');
     this.route.parent.params.subscribe((param: any) => this._mainUserId = param.user_id);
     this.route.parent.params.subscribe((param: any) => this._mainUserName = param.user_name);
@@ -54,6 +54,19 @@ export class ListComponent implements OnInit {
   }, () => {
     this.isPoemDataLoaded = true;
   });
+  }
+
+  likePoem(id: any) {
+    this
+    .connector
+    .likePoem(id, this._mainUserId)
+    .subscribe((data: any) => {
+      console.log(data);
+    }, err => {
+      console.log(err);
+    }, () => {
+      this.listAllPoems();
+    });
   }
 
 }

@@ -14,11 +14,13 @@ export class SendMessageComponent implements OnInit {
   text: AbstractControl;
   msgGroup: FormGroup;
   author_username: any;
+  recepient: any;
 
   constructor(private connector: SendMessageService, private fb: FormBuilder, private router: ActivatedRoute) { 
     this.router.parent.params.subscribe(params => this.author_username = params.user_name);
+    this.router.params.subscribe(params => this.recepient = params.name);
     this.msgGroup = fb.group({
-        username: ['', Validators.required],
+        username: [this.recepient ? this.recepient : '', Validators.required],
         text: ['', Validators.required]
     });
 

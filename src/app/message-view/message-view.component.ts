@@ -22,6 +22,7 @@ export class MessageViewComponent implements OnInit {
 
   ngOnInit() {
     this.getMessageDetail();
+    this.setRead();
   }
 
   getMessageDetail() {
@@ -49,6 +50,19 @@ export class MessageViewComponent implements OnInit {
     }, () => {
       this.txtModel = '';
     });
+  }
+
+  setRead() {
+    this
+    .connector
+    .setRead(this.id)
+    .subscribe(obj => {
+      console.log(obj);
+    }, err => {
+      console.log(err);
+    }, () => {
+      console.log('Message Read');
+    })
   }
 
 }

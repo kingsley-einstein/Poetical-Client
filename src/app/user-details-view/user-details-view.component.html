@@ -1,3 +1,63 @@
-<p>
-  user-details-view works!
-</p>
+<div *ngIf="userData !== 'undefinded'">
+  <div class="profile-card">
+    <img src="data:{{ userData.profilePic !== null && userData.profilePic != 'undefined' ? userData.profilePic.mimeType : '' }};base64,{{ userData.profilePic !== null && userData.profilePic != 'undefined' ? userData.profilePic.data : '' }}" class="pic" alt="No Image"/>
+    <div class="details-container">
+        <div class="details-item">
+          <i class="fa fa-user"></i> <b>Username:</b> {{ userData.username }}
+        </div>
+        <div class="details-item">
+          <i class="fa fa-venus-mars"></i> <b>Gender:</b> {{ userData.gender }}
+        </div>
+        <div class="details-item">
+          <i class="fa fa-copy"></i> <b>Poems:</b> <span class="item">{{ userData.poems.length }}</span>
+        </div>
+        <div class="details-item">
+          <i class="fa fa-signal"></i> <b>Status:</b> <span [ngClass]="{'indicator-online': userData.logged, 'indicator-offline': !userData.logged}"> </span>
+        </div>
+        <div class="details-item">
+          <a [routerLink]="['../../../send_message', userData.username]" [ngStyle]="{'color': 'black'}">
+            <i class="fa fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+  </div>
+</div>
+<div [ngStyle]="{'margin-top': '30px'}">
+  <div *ngIf="_poemsData && _poemsData.content.length > 0">
+    <div class="flex-view">
+      <div *ngFor="let item of _poemsData.content" class="flexed-item">
+        <div class="card">
+          <div class="poem-details-container">
+            <div class="poem-details-item">
+              <div class="image-div">
+                <img src="assets/thumbnail.jpg" alt="No Image"/>
+              </div>
+            </div>
+            <div class="poem-details-item">
+              <h5>
+                # {{ item.id }}
+              </h5>
+            </div>
+            <div class="poem-details-item">
+              <h5>
+                {{ item.title }}
+              </h5>
+            </div>
+            <div class="poem-details-item">
+              <h5>
+                {{ item.author }}
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex-view">
+    <div class="flexed-item"></div>
+    <div class="flexed-item">
+      <ngb-pagination [collectionSize]="_poemsData.totalElements" [maxSize]="7" [rotate]="true" [boundaryLinks]="true" [directionLinks]="false" [ellipses]="false" [pageSize]="_poemsData.size" [(page)]="_poemsPage"(pageChange)="getAllPoemsByUser()" size="sm"></ngb-pagination>
+    </div>
+    <div class="flexed-item"></div>
+  </div>
+</div>

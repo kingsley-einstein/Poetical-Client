@@ -13,4 +13,9 @@ export class DashboardServerConnectionService {
     return this.connector
                .get(`${environment._api}/users/${id}?access_token=${localStorage.getItem('token')}`);
   }
+
+  logUserOut(id: number) {
+    return this.connector
+               .put(`${environment._api}/users/logout/${id}?access_token=${localStorage.getItem('token')}`, {});
+  }
 }

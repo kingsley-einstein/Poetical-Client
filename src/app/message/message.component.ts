@@ -13,6 +13,9 @@ export class MessageComponent implements OnInit {
   userId : any;
   data : any;
 
+  page2 : number = 1;
+  data2 : any;
+
   constructor(private route: ActivatedRoute, private connector: MessageConnectionService, private router: Router) { 
     this.route.parent.params.subscribe(params => this.userId = params.user_id);
     
@@ -20,6 +23,7 @@ export class MessageComponent implements OnInit {
 
   ngOnInit() {
     this.getReceivedMessages();
+    this.getSentMessages();
   }
 
   getReceivedMessages() {
@@ -33,6 +37,33 @@ export class MessageComponent implements OnInit {
       console.log(err);
     }, () => {
       console.log('Completed');
+    });
+  }
+
+  getSentMessages() {
+    this
+    .connector
+    .getSentMessages(this.userId, (this.page2 -1))
+    .subscribe((value: any) => {
+      this.data2 = value;
+    }, err  => {
+      console.log(err);
+    }, () => {
+      console.log('Completed');
+    });
+  }
+
+  deleteMessages(message: any) {
+    this
+    .connector
+    .deleteMessage(message, this.userId, (this.page - 1))
+    .subscribe(obj => {
+      console.log(obj);
+    }, err => {
+      console.log(err);
+    }, () => {
+      this.getReceivedMessages();
+      this.getSentMessages();
     });
   }
 

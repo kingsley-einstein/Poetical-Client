@@ -18,9 +18,9 @@ export class ListServerConnectionService {
         return this.connector
                    .get(`${environment._api}/poems/all/${page-1}?access_token=${localStorage.getItem('token')}`);
     }
- 
-    addUserItemAsFriend(sender: number, recepient: number) {
+
+    likePoem(id: number, user: any) {
         return this.connector
-                   .get(`${environment._api}/friends/send?sender_id=${sender}&recepient_id=${recepient}&access_token=${localStorage.getItem('token')}`);
+                   .get(`${environment._api}/poems/${id}/like?user_id=${user}&access_token=${localStorage.getItem('token')}`);
     }
 }

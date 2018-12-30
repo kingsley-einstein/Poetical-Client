@@ -1,3 +1,42 @@
-<p>
-  poem-details-view works!
-</p>
+<div class="poem-card">
+  <h5>
+    {{ data.title }}
+  </h5>
+  <div class="poem-card-flex">
+    <div class="poem-card-item">
+      <i class="fa fa-calendar"></i> <b>Date:</b> <small> {{ data.dateCreated }} </small>
+    </div>
+    <div class="poem-card-item">
+      <i class="fa fa-user"></i> <b>Author:</b> <small> {{ data.author }} </small>
+    </div>
+    <div clas="poem-card-item">
+      <i class="fa fa-thumbs-up"></i> <b>Likes:</b> <small> {{ data.likes }} </small>
+    </div>
+  </div>
+  <div>
+    {{ data.content }}
+  </div>
+</div>
+
+<div [ngStyle]="{'margin-bottom': '20px'}">
+    <div class="formgroup">
+        <form>
+          <div [ngStyle]="{'margin-bottom': '10px'}">
+            <textarea placeholder="Enter Comment.." [(ngModel)]="content" [ngModelOptions]="{standalone: true}"></textarea>
+          </div>
+          <button [disabled]="content.trim().length <= 0"(click)="addComment()">Add Comment</button>
+        </form>
+      </div>
+</div>
+
+<div [ngStyle]="{'margin-bottom': '15px'}">
+  <div *ngFor="let comment of comments.content" class="poem-comment">
+    <img src="data:{{ comment.author.profilePic !== null ? comment.author.profilePic.mimeType : ''}};base64,{{ comment.author.profilePic !== null ? comment.author.profilePic.data : '' }}" style="border-radius: 100%; width: 40px; height: 40px;" alt="No Image"/>
+    <b [ngStyle]="{'margin-left': '8px'}">
+      {{ comment.author.username }}
+    </b>
+    <small [ngStyle]="{'margin-left': '9px'}">
+      {{ comment.content }}
+    </small>
+  </div>
+</div>

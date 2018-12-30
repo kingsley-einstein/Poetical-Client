@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 //import { FormBuilder, AbstractControl, Validators, FormGroup} from '@angular/forms';
 import { MainComponent } from '../main/main.component';
 import { DashboardServerConnectionService } from './dashboard-server-connection.service';
+import { Logout } from '../Logout';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +14,7 @@ export class DashboardComponent implements OnInit {
 
   _userId : number; _actualData : any;
 
-  constructor(public mainComponent: MainComponent, private connector: DashboardServerConnectionService, private route: ActivatedRoute) { 
+  constructor(public mainComponent: MainComponent, private connector: DashboardServerConnectionService, private route: ActivatedRoute, private router: Router) { 
     this.route.params.subscribe((param) => this._userId = param.user_id);
   }
 
@@ -37,8 +38,17 @@ export class DashboardComponent implements OnInit {
   });
   }
 
-  public getActualData() {
-    return this._actualData;
+  logUserOut() {
+    this
+    .connector
+    .logUserOut(this._userId)
+    .subscribe((obj: any) => {
+      console.log(obj)
+    }, (err) => {
+      console.log(err);
+    }, () => {
+      Logout.logout(this.router);
+    })
   }
 
 }

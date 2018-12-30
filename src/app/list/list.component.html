@@ -17,7 +17,12 @@
               <h6>{{ user.username }}</h6>
             </div>
             <div class="details-item">
-              <i class="fa fa-envelope"></i>
+              <a [routerLink]="['../send_message', user.username]" [ngStyle]="{'color': 'black'}">
+                <i class="fa fa-envelope"></i>
+              </a>
+              <a [routerLink]="['../profile_view', user.username, user.id]" [ngStyle]="{'color': 'black', 'margin-left': '8px'}">
+                <i class="fa fa-user"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -58,7 +63,10 @@
                     </h5>
                   </div>
                   <div class="details-item">
-                    <i class="fa fa-thumbs-up"></i>
+                    <a [routerLink]="['../poem', poem.id]" [ngStyle]="{'color': 'black'}">
+                      <i class="fa fa-file"></i>
+                    </a>
+                    <i class="fa fa-thumbs-up" (click)="likePoem(poem.id)" [ngStyle]="{'margin-left': '8px'}"></i> {{ poem.likes }}
                   </div>
                 </div>
               </div>

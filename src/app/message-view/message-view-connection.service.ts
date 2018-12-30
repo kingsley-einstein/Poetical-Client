@@ -20,4 +20,9 @@ export class MessageViewService {
                        text: text
                    });
     }
+
+    setRead(id: any) {
+        return this.connector
+                   .put(`${environment._api}/messages/read/${id}?access_token=${localStorage.getItem('token')}`, {});
+    }
 }

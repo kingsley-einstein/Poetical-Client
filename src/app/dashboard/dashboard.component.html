@@ -30,5 +30,11 @@
   <div class="grouped-item marginalize">
     <router-outlet></router-outlet>
   </div>
-  <div class="grouped-item"></div>
+  <div class="grouped-item">
+      <div [ngStyle]="{'float': 'right'}">
+          <button class="logout-btn" (click)="logUserOut()">
+            <i class="fa fa-sign-out"></i>
+          </button>
+        </div>
+  </div>
 </div>

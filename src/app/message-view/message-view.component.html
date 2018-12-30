@@ -1,19 +1,25 @@
-<div *ngFor="let i of data.content">
-  <div [ngClass]="{'message-right': i.author !== userName, 'message-left': i.author === userName}">
-    <div>
-      <h4>
-        {{ i.author }}
-      </h4>
-    </div>
-    <div>
-      {{ i.text }}
+<div [ngClass]="{'message-card': true}">
+  <div *ngFor="let i of data.content">
+    <div [ngClass]="{'message': true}">
+      <div>
+        <h4>
+          {{ i.author }}
+        </h4>
+      </div>
+      <div>
+        {{ i.text }}
+      </div>
     </div>
   </div>
-</div>
 
-<div class="formgroup">
-  <form>
-    <input type="text" [(ngModel)]="txtModel" name="txtModel" placeholder="Enter Text">
-    <button [disabled]="txtModel.trim().length <= 0" (click)="sendMessage()">Send</button>
-  </form>
+  <ngb-pagination [collectionSize]="data.totalElements" [pageSize]="data.size" [(page)]="page" (pageChange)="getMessageDetail()" [maxSize]="7" [rotate]="true" [ellipses]="false" [boundaryLinks]="true" [directionLinks]="false" size="sm"></ngb-pagination>
+  
+  <div class="formgroup">
+    <form>
+      <div [ngStyle]="{'margin-bottom': '10px', 'margin-top': '10px'}">
+        <input type="text" [(ngModel)]="txtModel" name="txtModel" placeholder="Enter Text">
+      </div>
+      <button [disabled]="txtModel.trim().length <= 0" (click)="sendMessage()">Send</button>
+    </form>
+  </div>
 </div>
