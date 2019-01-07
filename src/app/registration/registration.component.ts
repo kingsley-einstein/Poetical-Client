@@ -46,6 +46,7 @@ export class RegistrationComponent implements OnInit {
   },
 () => {
   alert('Succesfully registered. Proceed to login');
+  this.registerGroup.reset();
 })
   }
 

@@ -42,6 +42,7 @@ export class UserDetailsViewComponent implements OnInit {
     .getPoemsByUser(this._name, (this._poemsPage - 1))
     .subscribe((obj: any) => {
       this._poemsData = obj
+      console.log(this._poemsData);
     }, err => {
       console.log(err);
     });

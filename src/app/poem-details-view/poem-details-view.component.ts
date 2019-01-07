@@ -64,4 +64,17 @@ export class PoemDetailsViewComponent implements OnInit {
     });
   }
 
+  likePoem() {
+    this
+    .connector
+    .likePoem(this.id, this.user)
+    .subscribe((obj) => {
+      console.log(obj);
+    }, (err) => {
+      console.log(err);
+    }, () => {
+      this.getPoemData();
+    });
+  }
+
 }

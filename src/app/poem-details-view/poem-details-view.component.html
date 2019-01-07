@@ -10,7 +10,7 @@
       <i class="fa fa-user"></i> <b>Author:</b> <small> {{ data.author }} </small>
     </div>
     <div clas="poem-card-item">
-      <i class="fa fa-thumbs-up"></i> <b>Likes:</b> <small> {{ data.likes }} </small>
+      <i class="fa fa-thumbs-up" (click)="likePoem()"></i> <b>Likes:</b> <small> {{ data.likes }} </small>
     </div>
   </div>
   <div>
@@ -38,5 +38,11 @@
     <small [ngStyle]="{'margin-left': '9px'}">
       {{ comment.content }}
     </small>
+  </div>
+  <div class="flex-view">
+    <div class="flexed-item"></div>
+    <div class="flexed-item">
+      <ngb-pagination [collectionSize]="comments.totalElements" [pageSize]="comments.size" [maxSize]="7" [rotate]="true" [ellipses]="false" [boundaryLinks]="true" [directionLinks]="false" size="sm" [(page)]="page" (pageChange)="getComments()"></ngb-pagination>
+    </div>
   </div>
 </div>

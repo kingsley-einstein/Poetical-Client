@@ -23,4 +23,9 @@ export class PoemDetailsServerConnectionService {
     return this.connector
                .get(`${environment._api}/comments/poem_comments/${id}/${page}?access_token=${localStorage.getItem('token')}`);
   }
+
+  likePoem(id: number, user: any) {
+        return this.connector
+                   .get(`${environment._api}/poems/${id}/like?user_id=${user}&access_token=${localStorage.getItem('token')}`);
+    }
 }

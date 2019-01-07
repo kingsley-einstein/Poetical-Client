@@ -48,14 +48,16 @@ export class ResetPasswordComponent implements OnInit {
     .reset(this.resetGroup)
     .subscribe(data => {
       this.data = data;
-      //this.loading = true;
+      this.loading = true;
     }, 
     (err) => {
       this.data = err.message;
       this.loading = false;
     },
   () => {
+    alert(this.data);
     this.loading = false;
+    this.resetGroup.reset();
   })
   }
 
