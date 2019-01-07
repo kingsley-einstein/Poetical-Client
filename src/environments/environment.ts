@@ -3,10 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  admin: 'admin',
-  password: '_pass',
-  _api: 'http://localhost:9090'
+  production: true,
+  admin: 'poetical_admin',
+  password: 'poetical_secret',
+  _api: 'http://poets-endpoints.herokuapp.com'
 };
 
 /*
