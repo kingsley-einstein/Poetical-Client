@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot --prod"
+    "postinstall": "ng build --aot -prod"
   },
   "engines": {
     "node": "10.13.0",
@@ -57,7 +57,7 @@
     "tslint": "~5.9.1"
   },
   "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.",
-  "main": "index.js",
+  "main": "server.js",
   "author": "",
   "license": "ISC"
 }
