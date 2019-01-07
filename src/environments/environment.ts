@@ -4,9 +4,9 @@
 
 export const environment = {
   production: true,
-  admin: 'poetical_admin',
-  password: 'poetical_secret',
-  _api: 'http://poets-endpoints.herokuapp.com'
+  admin: '_admin',
+  password: '_secret',
+  _api: '--'
 };
 
 /*
