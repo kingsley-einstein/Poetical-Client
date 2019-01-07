@@ -5,7 +5,7 @@ const app = express();
 app.use(express.static('./dist/Poetical'));
 
 app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/dist/Poetical/index.html'));
+    res.sendFile(path.join('.', '/dist/Poetical/index.html'));
 });
 
 app.listen(process.env.PORT || 3000, () => {
